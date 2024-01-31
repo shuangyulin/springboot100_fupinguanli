@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.PinkunhuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.PinkunhuEntity" id="pinkunhuMap">
+        <result property="bianhao" column="bianhao"/>
+        <result property="jiatingchengyuan" column="jiatingchengyuan"/>
+        <result property="chengyuanrenshu" column="chengyuanrenshu"/>
+        <result property="jiatingzhuzhi" column="jiatingzhuzhi"/>
+        <result property="jiatingzhuangkuang" column="jiatingzhuangkuang"/>
+        <result property="fengmian" column="fengmian"/>
+        <result property="renjunshouru" column="renjunshouru"/>
+        <result property="xiangxijieshao" column="xiangxijieshao"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.PinkunhuVO" >
+		SELECT * FROM pinkunhu  pinkunhu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.PinkunhuVO" >
+		SELECT  pinkunhu.* FROM pinkunhu  pinkunhu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.PinkunhuView" >
+
+		SELECT  pinkunhu.* FROM pinkunhu  pinkunhu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.PinkunhuView" >
+		SELECT * FROM pinkunhu  pinkunhu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
